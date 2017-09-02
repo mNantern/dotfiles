@@ -1,0 +1,32 @@
+[include]
+  path = ~/.gitconfig.local
+
+[core]
+  autocrlf = input
+  ignorecase = false
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
+ 
+[alias]
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  s = status -sb
+  # Diff
+  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  p = pull
+  # Switch to a branch, creating it if necessary
+  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+  # Commit all changes
+  ca = !git add -A && git commit -av
+  # List aliases
+  aliases = config --get-regexp alias
+
+[branch]
+autosetuprebase = always
+
+[push]
+	default = simple
