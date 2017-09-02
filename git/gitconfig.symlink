@@ -24,6 +24,8 @@
   ca = !git add -A && git commit -av
   # List aliases
   aliases = config --get-regexp alias
+  # Clean outdated branches that track a branch which no longer exists
+  dob = !git branch -vv | grep ': gone' | cut -d ' ' -f 3 | xargs git branch -D
 
 [branch]
 autosetuprebase = always
