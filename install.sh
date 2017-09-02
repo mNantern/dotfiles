@@ -34,5 +34,14 @@ install_dotfiles () {
   done
 }
 
+execute_install_files () {
+  find . -name install.sh -maxdepth 2 -mindepth 2 | while read installer
+  do
+    echo "Executing installer: $installer"
+    bash -c "${installer}"
+  done
+}
+
 setup_gitconfig
 install_dotfiles
+execute_install_files

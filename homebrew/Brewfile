@@ -1,0 +1,24 @@
+# Cask
+cask_args appdir: '/Applications'
+
+# Tap
+tap "caskroom/cask"
+tap "homebrew/bundle"
+tap "homebrew/core"
+
+# Cli
+brew "coreutils"
+brew "git"
+brew "gnu-tar"
+brew "jq"
+brew "socat"
+brew "wget"
+brew "youtube-dl"
+brew "bash"
+
+# Java
+cask "java"
+cask "intellij-idea-ce", args: { force: true }
+brew "maven"
+
+
