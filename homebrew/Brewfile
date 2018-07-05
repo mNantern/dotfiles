@@ -16,9 +16,13 @@ brew "wget"
 brew "youtube-dl"
 brew "bash"
 
-# Java
 cask "java"
 cask "intellij-idea-ce", args: { force: true }
 brew "maven"
-
-
+cask "flycut"
+cask "docker"
+cask "atom"
+cask "vlc"
+cask "the-unarchiver"
+cask "dropbox"
+cask "firefox"

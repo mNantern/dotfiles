@@ -17,15 +17,19 @@
   s = status -sb
   # Diff
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  f = fetch
   p = pull
   # Switch to a branch, creating it if necessary
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+  # Push a branch, creating and tracking the remote if necessary
+  pus = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
   # Commit all changes
   ca = !git add -A && git commit -av
   # List aliases
   aliases = config --get-regexp alias
   # Clean outdated branches that track a branch which no longer exists
-  dob = !git branch -vv | grep ': gone' | cut -d ' ' -f 3 | xargs git branch -D
+  dob = !"git remote update origin --prune ; git branch -vv | grep ': gone' | cut -d ' ' -f 3 | xargs git branch -D"
+  r = checkout .
 
 [branch]
 autosetuprebase = always
