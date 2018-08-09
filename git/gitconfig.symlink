@@ -30,9 +30,18 @@
   # Clean outdated branches that track a branch which no longer exists
   dob = !"git remote update origin --prune ; git branch -vv | grep ': gone' | cut -d ' ' -f 3 | xargs git branch -D"
   r = checkout .
+  # create a branch with the upstream/master as upstream
+  fork = "!f() { git checkout -b $1 upstream/master; }; f"
+  uncommit = reset --soft HEAD^
 
 [branch]
 autosetuprebase = always
 
 [push]
 	default = simple
+[rebase]
+	autoStash = true
+[pull]
+	rebase = true
+[log]
+	follow = true
