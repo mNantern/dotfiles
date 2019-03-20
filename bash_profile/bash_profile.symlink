@@ -1,0 +1,7 @@
+mkdir -p ~/.bashrc.d
+chmod 700 ~/.bashrc.d
+
+for file in ~/.bashrc.d/*.bashrc;
+do
+  source "$file"
+done
