@@ -8,6 +8,7 @@ tap "homebrew/core"
 
 # Cli
 brew "coreutils"
+brew "vim"
 brew "git"
 brew "gnu-tar"
 brew "jq"
@@ -27,3 +28,4 @@ cask "the-unarchiver"
 cask "dropbox"
 cask "firefox"
 cask "cryptomator"
+cask "kitty"

@@ -18,3 +18,5 @@ set shiftround            " always indent/outdent to the nearest tabstop
 set expandtab             " use spaces instead of tabs
 set smartindent           " automatically insert one extra level of indentation
 set nowrap                " don't wrap text
+set clipboard=unnamed     " yank to clipboard on Mac OS X
+set backspace=2           " make backspace work like most other programs

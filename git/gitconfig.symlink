@@ -32,6 +32,8 @@
   r = checkout .
   # create a branch with the upstream/master as upstream
   fork = "!f() { git checkout -b $1 upstream/master; }; f"
+  # Pull upstream master
+  pu = pull upstream master
   uncommit = reset --soft HEAD^
 
 [branch]
@@ -45,3 +47,5 @@ autosetuprebase = always
 	rebase = true
 [log]
 	follow = true
+[credential]
+	helper = osxkeychain
